@@ -1,0 +1,14 @@
+/*
+ * To start mongod server with authentication we can use "--auth" command.
+ */
+
+ mongod --auth --config c:/mongodb/mongo.config --journal
+
+ /*
+  * Now, you need go to particular database you want to use, and then
+  * provide the user and password to the ".auth(user, pwd)" function.
+  * If the function is returning 1, then its mean "true". If it returning
+  * 0, then its mean "authentication failed".
+  */
+
+db.auth("nowo", "password");

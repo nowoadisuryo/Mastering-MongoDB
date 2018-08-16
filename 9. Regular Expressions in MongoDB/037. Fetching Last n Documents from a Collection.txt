@@ -1,0 +1,5 @@
+/*
+ * For limiting documents we want to fetch, we can use ".limit(n)" function.
+ */
+
+db.users.find({"name.first_name" : {$regex : /^n/, $options : "i"}, fav_coins : {$regex : /n$/, $options : "i"}}).limit(1).pretty();

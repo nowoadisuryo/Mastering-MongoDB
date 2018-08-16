@@ -1,0 +1,30 @@
+/*
+ * To use embedded technique for one-to-one relationship is as follows.
+ */
+
+ {
+  name : "Nowo Adi Suryo",
+  business : "MarketKoin",
+  address : {
+    street : "Sangkuriang",
+    city : "Bandung",
+    state : "West Java",
+  }
+ }
+
+/*
+ * To use references technique for one-to-one relationship is as follows.
+ */
+
+ {
+  _id : 001,
+  name : "Nowo Adi Suryo",
+  business : "MarketKoin"
+ }
+
+ {
+  cust_id : 001,
+  street : "Sangkuriang",
+  city : "Bandung",
+  state : "West Java"
+ }

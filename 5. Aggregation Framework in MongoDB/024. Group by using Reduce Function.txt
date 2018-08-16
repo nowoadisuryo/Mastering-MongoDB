@@ -1,0 +1,75 @@
+/*
+ * Reduce function is an aggregation function that operates on the documents
+ * during the grouping operation. These functions may return a sum or a count.
+ * The function takes two arguments: the current document and an aggregation
+ * result document for that group.
+ */
+
+/*
+ * Given documents as follow.
+ */
+
+ {
+   name : {
+     first_name: "Nowo",
+     last_name: "Adi Suryo"
+   },
+   username : "nowoadisryo",
+   password : "$2y$10$ly2PXVEnYKPpHHl8jSewgeKwJ4tYIt869IIFV61ENL5mYzR5DoqhS",
+   email : "nowoadisuryo@gmail.com",
+   age : 19,
+   primary_phone_number : "081617728770",
+   secondary_phone_number : "080000000000",
+   fav_coins : ["Bitcoin", "Etherium"],
+   balance : {
+     btc : 0.29000238,
+     eth : 2.83339021,
+     stq : 0,
+     vex : 0
+   },
+   verified : "0",
+   verification_code : "0",
+   created_at : new Date(),
+   updated_at : ""
+ },
+ {
+   name : {
+     first_name: "Meow",
+     last_name: "Ed"
+   },
+   username : "meowed",
+   password : "$2y$10$ly2PXVEnYKPpHHl8jSewgeKwJ4tYIt869IIFV61ENL5mYzR5DoqhS",
+   email : "meowed@gmail.com",
+   age : 19,
+   primary_phone_number : "081617728771",
+   secondary_phone_number : "080000000001",
+   fav_coins : ["Storiqa", "Vexanium"],
+   balance : {
+     btc : 0,
+     eth : 0,
+     stq : 999.29000238,
+     vex : 300.83339021
+   },
+   verified : "0",
+   verification_code : "0",
+   created_at : new Date(),
+   updated_at : ""
+ }
+
+/*
+ * We can use reduce function for grouping by name and implement mathematical
+ * expression on array.
+ */
+
+db.users.group(
+{
+  key : {"name.first_name" : 1},
+  reduce : function(curr, result)
+  {
+    result.total_assets_in_idr += (curr.balance.btc * 95849000) +
+      (curr.balance.eth * 4739000) + (curr.balance.stq * 35) +
+      (curr.balance.vex * 409)
+  },
+  intial : {total_assets_in_idr : 0}
+}
+);

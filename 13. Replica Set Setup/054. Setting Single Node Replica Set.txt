@@ -1,0 +1,12 @@
+/*
+ * For setting replica set we need run "--replSet" option when starting mongod
+ * server.
+ */
+
+mongod --replSet <replica set name>
+
+/*
+ * After the server is up and running, now we can check replica set status by
+ * typing "rs.status()". Then we can run "rs.initiate()" for initiante the
+ * replica set.
+ */

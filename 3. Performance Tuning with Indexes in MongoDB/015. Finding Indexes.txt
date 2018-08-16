@@ -1,0 +1,5 @@
+/*
+ * We can fetch all index in a collection with the ".getIndexes()" function.
+ */
+
+db.users.getIndexes();

@@ -1,0 +1,40 @@
+/*
+ * To use embedded technique for one-to-many relationship is as follows.
+ */
+
+ {
+  name : "Nowo Adi Suryo",
+  school : "UNIKOM",
+  subjects : [
+    {
+      Teacher : "Ken Kinanti",
+      Subject : "Artificial Intelligence"
+    },
+    {
+      Teacher : "Kania Evita Dewi",
+      Subject : "Calculus"
+    }
+  ]
+ }
+
+/*
+ * To use references technique for one-to-many relationship is as follows.
+ */
+
+ {
+  _id : 001,
+  name : "Nowo Adi Suryo",
+  school : "UNIKOM",
+ }
+
+ {
+  std_id : 001,
+  Teacher : "Ken Kinanti",
+  Subject : "Artificial Intelligence"
+ }
+
+ {
+  std_id : 001,
+  Teacher : "Kania Evita Dewi",
+  Subject : "Calculus"
+ }

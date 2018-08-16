@@ -1,0 +1,15 @@
+/*
+ * We can analyze query performance in mongoDB with the ".explain("executionStats")"
+ * function. When we do not use an indexed criteria for searching document,
+ * mongoDB will search through all of the available document. So it will take
+ * more time to fetch the right document.
+ */
+
+db.users.find({"name.first_name" : "Nowo"}).explain("executionStats");
+
+/*
+ * When we use indexed criteria for searching a document, mongoDB will go
+ * straight to the document and then fetch it. So it will take less time.
+ */
+
+ db.users.find({"_id" : ObjectId("5b6c3b012f3381bfb747d112")}).explain("executionStats");

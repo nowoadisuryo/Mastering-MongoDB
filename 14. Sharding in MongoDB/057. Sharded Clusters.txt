@@ -1,0 +1,8 @@
+/*
+ * There are 3 main components for sharded cluster; shard, mongos, and
+ * config servers. Shard and config servers is a replica set.
+ * - Shard is a subset of data set.
+ * - Mongos is an interface for client app communicating with shard. In other
+ * words its a query router.
+ * - Config servers is a meta data and config setting.
+ */

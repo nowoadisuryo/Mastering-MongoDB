@@ -1,0 +1,37 @@
+/*
+ * $lte : Its mean "less than or equal to".
+ */
+
+db.users.find({"age" : {$lte : 20}}).pretty();
+
+/*
+ * $gte : Its mean "greater than or equal to".
+ */
+
+db.users.find({"age" : {$gte : 20}}).pretty();
+
+/*
+ *  $ne : Its mean "not equal to".
+ */
+
+db.users.find({"age" : {$ne : 20}}).pretty();
+
+/*
+ * $in : This operator will look for a value in an array that match with the
+ * given criteria.
+ */
+
+db.users.find({"fav_coins" : {$in : ["Bitcoin"]}}).pretty();
+
+/*
+ * $nin : This operator will look for a value not in an array that match with the
+ * given criteria.
+ */
+
+db.users.find({"fav_coins" : {$nin : ["Bitcoin"]}}).pretty();
+
+/*
+ * $exists : This operator will first check for an array that exists or not.
+ */
+
+db.users.find({"fav_coins" : {$exists : true, $nin : ["Bitcoin"]}}).pretty();

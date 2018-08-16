@@ -1,0 +1,34 @@
+/*
+ * To use embedded technique for many-to-many relationship is as follows.
+ * We will use two way embedding technique. The author collection is
+ * referencing to articles collection, while the articles collection is
+ * referencing to authors collection.
+ */
+
+/* Authors Collection */
+{
+  id : 1,
+  name : "Nowo Adi Suryo",
+  articles : [1, 2]
+}
+
+{
+  id : 2,
+  name : "Joko Anwar",
+  articles : [1]
+}
+
+/* Articles Collection */
+{
+  id : 1,
+  title : "Introduction to MongoDB",
+  categories : ["NoSQL"],
+  authors : [1, 2]
+}
+
+{
+  id : 2,
+  title : "Advanced MongoDB",
+  categories : ["NoSQL"],
+  authors : [2]
+}

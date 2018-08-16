@@ -1,0 +1,25 @@
+/*
+ * For creating documents, first we need to create a collection using function
+ * "db.collection_name"
+ */
+
+db.users;
+
+ /*
+  * We have created a collection, now we can create a document and save it
+  * to the colletion. We can collect document fields in a var.
+  */
+
+var userInfo = {};
+
+userInfo.username = "nowoadi";
+userInfo.password = "$2y$10$pm5Muen/xodUlidpKgcdwuMD1uW/FFeUEd9uMzQqGnXhIF2aBFPEK";
+userInfo.email = "nowoadisuryo@gmail.com";
+userInfo.created_at = new Date();
+
+/*
+ * We have collected document fields in a variable, now we can store the document
+ * to a collection with the "db.collection_name.save(document)" function.
+ */
+
+db.users.save(userInfo);

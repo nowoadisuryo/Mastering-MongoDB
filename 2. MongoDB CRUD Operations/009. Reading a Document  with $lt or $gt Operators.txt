@@ -1,0 +1,9 @@
+/*
+ * We can use the "$lt" operator (its mean "less than") to specify the criteria,
+ * of we can use the "$gt" operator (its mean "greater than") to specify the
+ * criteria.
+ */
+
+db.users.find({"age" : {$lt : 20}}).pretty();
+
+db.users.find({"age" : {$gt : 22}}).pretty();

@@ -1,0 +1,29 @@
+/*
+ * Map-reduce is a data processing paradigm for condensing large volumes of
+ * data into useful aggregated results. For map-reduce operations, MongoDB
+ * provides the "mapReduce" database command.
+ */
+
+/*
+ * The first parameter of "mapReduce" command is the "map" function containing
+ * "emit" function that will select two fields for "key" and "value". First
+ * parameter in the "emit" function will be the "key" and second parameter will
+ * be "value" for "reduce" function.
+ *
+ * Second parameter of "mapReduce" command is "reduce" function that will do
+ * operation to the "value".
+ *
+ * Third parameter of "mapReduce" command is the criteria for the function.
+ * query : Filter output by certain field.
+ * out : Collection name for storing output values of the "mapReduce" command.
+ * We can set other criterias for the function such as sort and limit.
+ */
+
+db.deposit.mapReduce(
+  function() {emit(this.user_id, this.amount)},
+  function(key, value) {return Array.sum(value)},
+  {
+    query : {status : "OK"},
+    out : "TotalDeposit"
+  }
+);

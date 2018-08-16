@@ -1,0 +1,20 @@
+/*
+ * The shard key determines the distribution of the collection’s documents among
+ * the cluster’s shards. The shard key is either an indexed field or indexed
+ * compound fields that exists in every document in the collection.
+ */
+
+/*
+ * MongoDB partitions data in the collection using ranges of shard key values.
+ * Each range defines a non-overlapping range of shard key values and is
+ * associated with a chunk.
+ *
+ * MongoDB attempts to distribute chunks evenly among the shards in the cluster.
+ * The shard key has a direct relationship to the effectiveness of chunk
+ * distribution.
+ *
+ * Once you shard a collection, the shard key and the shard key values are
+ * immutable; i.e.
+ *  - You cannot select a different shard key for that collection.
+ *  - You cannot update the values of the shard key fields.
+ */

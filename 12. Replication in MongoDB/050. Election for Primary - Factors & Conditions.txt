@@ -1,0 +1,33 @@
+/*
+ * There are two scenarios that will trigger the election.
+ * 1. Primary data cannot be accessed by the secondary data.
+ * 2. Primary data cannot accessed most of secondary data.
+ */
+
+/*
+ * 1. Primary data cannot to be accessed by the secondary data.
+ * Primary and secondary data will send a heartbeat (pings) every 2 second, when
+ * there is no response from primary data in 10 second, then eligible secondary
+ * will call the election.
+ */
+
+/*
+ * 2. Primary data cannot accessed most of secondary data.
+ * When primary data is only connected to a few secondary data, then the
+ * secondary data who can connected to the most other secondary data will
+ * become the primary.
+ */
+
+/*
+ * Replication election protocol. This is the protocol replica sets should
+ * follow. This is how the protocolVersion: 1 worked.
+ * If a replica set member is not having priority to participate in the election,
+ * then it cannot following the election. Member priority need to be set to 1,
+ * for participating in the election. The secondary member with the highest
+ * or lowest priority can call an election. Highest priority that a
+ * secondary member had, highest chance for that secondary member to winning
+ * the election and so forth. If the priority is 0, then the member cannot
+ * participating in an election.
+ *
+ * Note: We can use another data center for storing secondary data/replica set.
+ */

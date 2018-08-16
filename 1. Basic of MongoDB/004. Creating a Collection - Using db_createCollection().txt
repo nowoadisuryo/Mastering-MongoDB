@@ -1,0 +1,27 @@
+/*
+ * To create collection with "db.createCollection()" function, first we need
+ * to switch to the database that we want to use.
+ */
+
+use marketkoin_kyc;
+
+/*
+ * "db.createCollection(String name, Document options)" function accept two
+ * parameters, the first parameter is the name of the collection and the second
+ * parameter is the options that we can apply to the collection.
+ */
+
+/*
+ * Description about the option fields.
+ * - capped : boolean (To create a capped collection, capped collection is a
+ * a fixed-sized collection that automatically overwrites its oldest entries
+ * when it reaches its maximum size.) If you specify true, you must also set
+ * a maximum size in the size field.
+ * - size : number (specify a maximum size in bytes for a capped collection.).
+ * - max : number (the maximum number of documents allowed in the capped
+ * collection. If a capped collection reaches the size limit before it reaches
+ * the maximum number of documents, MongoDB removes old documents. If you prefer
+ * to use the max limit, ensure that the size limit, which is required for a
+ * capped collection, is sufficient to contain the maximum number of documents).
+ */
+db.createCollection("users", {capped: true, size: 3769000, max: 1000});

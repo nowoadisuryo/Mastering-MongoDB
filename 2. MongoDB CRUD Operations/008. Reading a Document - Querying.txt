@@ -1,0 +1,12 @@
+/*
+ * To read/fetch a document with specific criteria, we can input the criteria
+ * in the parameter of "db.collection_name.find(Document criteria)" function.
+ */
+
+db.users.find({"name.first_name" : "Nowo"}).pretty();
+
+/*
+ * We can use the "$eq" operator (its mean "equal to") to specify the criteria.
+ */
+
+db.users.find({"verified" : {$eq : "0"}}).pretty();

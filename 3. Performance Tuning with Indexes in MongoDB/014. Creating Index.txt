@@ -1,0 +1,6 @@
+/*
+ * To create an index we can use the ".createIndex(Doucment param)" function.
+ * Value 1 of the key mean ascending. Value -1 mean descending.
+ */
+
+ db.users.createIndex({username : 1});

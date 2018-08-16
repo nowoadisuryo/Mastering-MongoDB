@@ -1,0 +1,13 @@
+/*
+ * MongoDB is providing regular expression for :
+ * 1. Pattern matching strings in queries.
+ * 2. Search for a pattern or word in any string.
+ */
+
+/*
+ * To use regex operator, you can do as follow.
+ */
+
+db.users.find({"name.first_name" : {$regex : "Nowo"}}).pretty();
+
+db.users.find({"name.first_name" : /Nowo/}).pretty();

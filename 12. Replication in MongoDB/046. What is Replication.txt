@@ -1,0 +1,16 @@
+/*
+ * Replication is a process of duplicating data. The duplicated data is called
+ * replica set.
+ * Why we need replication?
+ * - Availability of the data : If our server is down, then users can fetch
+ * data from another server.
+ * - Disaster Recovery/Backup
+ * - Redudancy
+ * - Reporting
+ *
+ * Advantages of using replication:
+ * - Availability
+ * - Data locality
+ * - Read frequency
+ * - Fault tolerance
+ */

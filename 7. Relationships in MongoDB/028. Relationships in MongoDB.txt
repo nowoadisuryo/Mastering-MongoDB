@@ -1,0 +1,4 @@
+/*
+ * We can make one-to-one, one-to-many, and many-to-many relationships with
+ * mongoDB using references or embedded technique.
+ */

@@ -1,0 +1,11 @@
+/*
+ * Replica set can only have 50 members. 7 voting members including the
+ * primary and 43 non-voting members.
+ * Member priority need to be set to 1, for participating in the election.
+ * If the priority is 0, then the member cannot participating in an election.
+ */
+
+/*
+ * Every state members should have one of these state; primary, secondary,
+ * recovering, rollback, and arbiter.
+ */

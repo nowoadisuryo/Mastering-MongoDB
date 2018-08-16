@@ -1,0 +1,27 @@
+/*
+ * Warning: Do not modify the number of votes for selecting primary.
+ * You can modify the number of votes where there are more than 7 voting members.
+ */
+
+/*
+ * We can write configuration with the following command in the mongo shell.
+ */
+
+//Declaration.
+cfg = rs.conf();
+
+//Using.
+cfg.members[3].votes = 0; //0 for non-voting, 1 for voting.
+cfg.members[3].priority = 0; //0 for non-voting, 1 for voting.
+
+/*
+ * For reconfiguring we can use following command.
+ */
+
+rs.reconfig(cfg);
+
+/*
+ * When we call the reconfiguring command, then the current primary will step
+ * down and the election will happen. When election is happen you cannot do
+ * any operations.
+ */

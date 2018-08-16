@@ -1,0 +1,19 @@
+/*
+ * This is the concept of using embedded tool for implementing relationships
+ * in mongoDB. The address key and contact key is the document that embedded
+ * inside another document.
+ */
+
+ {
+   id : <objectId_1>,
+   name : "Nowo",
+   position : "Research and Development",
+   address : {
+     city : "Bandung",
+     country : "Indonesia",
+   },
+   contact : {
+     phone : "081627738447",
+     email : "nowoadisuryo@gmail.com",
+   }
+ }

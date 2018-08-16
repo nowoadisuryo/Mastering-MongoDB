@@ -1,0 +1,19 @@
+/*
+ * What is data modelling?
+ * Data modeling is the process of documenting a complex software system design
+ * as an easily understood diagram, using text and symbols to represent the way
+ * data needs to flow. The diagram can be used as a blueprint for the
+ * construction of new software or for re-engineering a legacy application.
+ */
+
+/*
+ * Key of data modelling :
+ * - Structure of documents.
+ * - Relationships between data.
+ */
+
+/*
+ * Tools to represent the relationships :
+ * - References : We can reference another document in a document.
+ * - Embedded Data : We can embed a document inside a document.
+ */

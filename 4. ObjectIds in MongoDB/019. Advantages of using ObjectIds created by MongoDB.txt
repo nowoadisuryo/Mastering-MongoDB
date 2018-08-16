@@ -1,0 +1,6 @@
+/*
+ * The advantages of using ObjectIds created by mongoDB is that we can fetch
+ * the timestamp when ObjectIds is created using ".getTimestamp()" function.
+ */
+
+ db.users.find()[1]._id.getTimestamp();

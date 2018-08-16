@@ -1,0 +1,78 @@
+/*
+ * After MongoDB 4.0.
+ * In MongoDB, an operation on a single document is atomic. Because you can use
+ * embedded documents and arrays to capture relationships between data in a
+ * single document structure.
+ *
+ * An atomic transaction is an indivisible and irreducible series of database
+ * operations such that either all occur, or nothing occurs. A guarantee of
+ * atomicity prevents updates to the database occurring only partially, which
+ * can cause greater problems than rejecting the whole series outright.
+ *
+ * MongoDB provides the ability to perform multi-document transactions against
+ * replica sets. Multi-document transactions provide an “all-or-nothing”
+ * proposition. When a transaction commits, all data changes made in the
+ * transaction are saved. If any operation in the transaction fails, the
+ * transaction aborts and all data changes made in the transaction are discarded
+ * without ever becoming visible. Until a transaction commits, no write
+ * operations in the transaction are visible outside the transaction.
+ * Note: Transactions for sharded clusters are scheduled for MongoDB 4.2
+ *
+ * How this is works?
+ * During its execution, a transaction is able to read its own uncommitted
+ * writes, but none of its uncommitted writes will be seen by other operations
+ * outside of the transaction. Uncommitted writes are not replicated to
+ * secondary nodes until the transaction is committed to the database. Once the
+ * transaction has been committed, it is replicated and applied atomically to
+ * all secondary replicas.
+ *
+ * Important:
+ * In most cases, multi-document transaction incurs a greater performance cost
+ * over single document writes, and the availability of multi-document
+ * transaction should not be a replacement for effective schema design. For many
+ * scenarios, the denormalized data model (embedded documents and arrays) will
+ * continue to be optimal for your data and use cases. That is, for many
+ * scenarios, modeling your data appropriately will minimize the need for
+ * multi-document transactions.
+ */
+
+/*
+ * Before MongoDB 4.0.
+ * It is well known that MongoDB does not support transactions involving
+ * multiple documents. Atomicity in MongoDB is restricted to single document
+ * writes and, as a result, if you find yourself in a situation where you need
+ * to update multiple documents in “all or nothing” fashion, you’re stuck.
+ * With Fawn you will implements transactions using this two phase commit system.
+ * You can save, update, and delete documents and files across collections in a
+ * transactional manner.
+ */
+
+/*
+ * So what are our approaches that we can take in MongoDB to overcome a lack of
+ * transactions?
+ * - Restructure - restructure the code, so that we're working within a single
+ * document and taking advantage of the atomic operations that we offer within
+ * that document. And if we do that, then usually we're all set.
+ *
+ * - Implement in software - we can implement locking in software, by creating a
+ * critical section. We can build a test, test and set using find and modify.
+ * We can build semaphores, if needed. And in a way, that is the way the larger
+ * world works anyway. If we think about it, if one bank need to transfer money
+ * to another bank, they're not living in the same relational system. And they
+ * each have their own relational databases often. And they've to be able to
+ * coordinate that operation even though we cannot begin transaction and end
+ * transaction across those database systems, only within one system within one
+ * bank. So there's certainly ways in software to get around the problem.
+ *
+ * - Tolerate - the final approach, which often works in modern web apps and
+ * other applications that take in a tremendous amount of data is to just
+ * tolerate a bit of inconsistency. An example would, if we're talking about a
+ * friend feed in Facebook, it doesn't matter if everybody sees your wall update
+ * simultaneously. If okey, if one person's a few beats behind for a few seconds
+ * and they catch up. It often isn't critical in a lot of system designs that
+ * everything be kept perfectly consistent and that everyone have a perfectly
+ * consistent and the same view of the database. So we could simply tolerate a
+ * little bit of inconsistency that's somewhat temporary.
+ * Note: Update, findAndModify, $addToSet (within an update) & $push
+ * (within an update) operations operate atomically within a single document.
+ */

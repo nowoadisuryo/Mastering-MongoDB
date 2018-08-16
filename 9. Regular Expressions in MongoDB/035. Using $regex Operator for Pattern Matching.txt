@@ -1,0 +1,24 @@
+/*
+ * Using $regex operator for finding documents by a word.
+ * Note : $regex operator is case-sensitive by default.
+ */
+
+db.users.find({"name.first_name" : {$regex : "Nowo"}}).pretty();
+
+/*
+ * This is how you do pattern matching operation without $regex operator.
+ */
+
+db.users.find({"name.first_name" : /Nowo/}).pretty();
+
+/*
+ * Using $regex operator for finding documents by first character of field value.
+ */
+
+db.users.find({"name.first_name" : {$regex : /^N/}}).pretty();
+
+/*
+ * Using $regex operator for finding documents by last character of field value.
+ */
+
+ db.users.find({"name.first_name" : {$regex : /o$/}}).pretty();

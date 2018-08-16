@@ -1,0 +1,4 @@
+/*
+ * If we use ObjectIds created by mongoDB, then when we fetch our document
+ * by "_id", it will have refer to odd string like "5b6d77029670ed7644fe93ac".
+ */

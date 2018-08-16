@@ -1,0 +1,28 @@
+/*
+ * For updating a document we can use "db.collection_name.update(Document params)"
+ * function. The first parameter in the function is the document criteria,
+ * second parameter is the field name and value that we want to update, and the
+ * third parameter is the options to the function.
+ */
+
+/*
+ * Using the "$set" operator for defining the field name and value that we want
+ * to update.
+ */
+
+db.users.update({"name.first_name" : "Nowo"}, {$set : {"age" : 19}});
+
+/*
+ * Using the "upsert" option in the third parameter, if the document is not found
+ * and then we will insert new data with the "upsert" option.
+ */
+
+db.users.update({"name.first_name" : "Nowo"}, {$set : {"age" : 19}}, {upsert : true});
+
+/*
+ * We can update an entry of an array with specifying the array name following
+ * with the index that we want to update. If the index is not found, then it
+ * will create a new entry to the array.
+ */
+
+ db.users.update({"name.first_name" : "Nowo"}, {$set : {"fav_coins.2" : "Stellar Lumens"}});

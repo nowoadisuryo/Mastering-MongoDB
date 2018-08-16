@@ -1,0 +1,11 @@
+/*
+ * We can use $options for setting $regex operator to returning what documents
+ * we want.
+ */
+
+/*
+ * If we give the value $options : "i", then the $regex operator is not
+ * case-sensitive.
+ */
+
+db.users.find({"name.first_name" : {$regex : /^n/, $options : "i"}}).pretty();

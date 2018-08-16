@@ -1,0 +1,32 @@
+/*
+ * This is the concept of using references tool for implementing relationships
+ * in mongoDB. Given the collections and documents as follow.
+ */
+
+/* Employee collection has a document as follow. */
+{
+  id : <objectId_1>,
+  name : "Nowo",
+  position : "Research and Development"
+}
+
+/*
+ * Address collection has a document as follow. Address document is referencing
+ * employee_id to <objectId_1>.
+ */
+{
+  id : <objectId_2>,
+  employee_id : <objectId_1>,
+  city : "Bandung",
+  country : "Indonesia"
+}
+
+/*
+ * Contact collection has a document as follow. Contact document is referencing
+ * employee_id to <objectId_1>.
+ */
+{
+  id : <objectId_3>,
+  phone : "081627738447",
+  email : "nowoadisuryo@gmail.com"
+}

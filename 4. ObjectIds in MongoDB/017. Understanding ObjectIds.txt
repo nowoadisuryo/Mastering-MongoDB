@@ -1,0 +1,13 @@
+/*
+ * The ObjectIds is automatically created by mongoDB. Its nature is immutable,
+ * unique, bson datatype, 12 byte value.
+ *
+ * - Immutable mean when ObjectId is created, it cannot be modified or altered.
+ * - Unique : ObjectId is combination of time (when its created), host name,
+ * process id, and incrementing number.
+ *
+ * Why use complex id such as ObjectId for primary key?
+ * Since mongoDB is used in a large cluster environment, when we host mongoDB
+ * database in different machine, different server, ObjectId will ensure the
+ * primary key is unique.
+ */

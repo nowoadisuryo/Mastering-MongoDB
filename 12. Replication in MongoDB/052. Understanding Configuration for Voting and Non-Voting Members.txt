@@ -1,0 +1,15 @@
+/*
+ * This is the configuration for voting & non-voting members.
+ */
+
+{
+  "id" : <num>,
+  "host" : <hostname:port>,
+  "arbiterOnly" : false, //Set this to true, if arbiter.
+  "buildIndexes" : true,
+  "hidden" : false,
+  "priority" : 1 //0 for non-voting and 1 for voting members.
+  "tags" : {
+    "votes" : 1 //Number of votes, 0 or 1.
+  }
+}

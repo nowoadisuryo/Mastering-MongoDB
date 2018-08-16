@@ -1,0 +1,14 @@
+/*
+ * For setup 3 node replica set, we need to have 3 different server.
+ * We can start another server on same machine by defining different port
+ * when we start another mongod server.
+ */
+
+mongod --replSet <replica set name> --dbpath C:\mongodb\data\db1 --port 27018
+
+/*
+ * You can add replica set by running "rs.add(<hostname:port>)" command.
+ * For finding hostname you can use "db.hostInfo()" command in the running
+ * server.
+ * Note: Replica name must be same for every replica set.
+ */

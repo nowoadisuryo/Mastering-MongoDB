@@ -1,0 +1,18 @@
+/*
+ * We can use ".distinct()" function to get only different values of documents
+ * fields.
+ */
+
+db.users.distinct("fav_coins");
+
+/*
+ * We can use ".count()" function to get total documents in the collection.
+ */
+
+db.users.count();
+
+/*
+ * We can get total documents where the documents meet the given criteria.
+ */
+
+db.users.find({"fav_coins" : "Bitcoin"}).count();

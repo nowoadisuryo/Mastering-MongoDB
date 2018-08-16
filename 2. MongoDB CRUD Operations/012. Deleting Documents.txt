@@ -1,0 +1,20 @@
+/*
+ * For deleting a document we can use "db.collection_name.remove(Document param)"
+ * function. The first parameter will matching the document with the given
+ * criteria.
+ */
+
+db.users.remove({"name.first_name" : "Nowo"});
+
+/*
+ * We can use array for the criteria in the first parameter.
+ */
+
+db.users.remove({"fav_coins" : "Storiqa"});
+
+/*
+ * We can limit the document that will be deleted. This will delete only the
+ * first entry that match with the given criteria.
+ */
+
+ db.users.remove({"age" : 19}, true);

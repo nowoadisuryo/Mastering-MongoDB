@@ -1,0 +1,19 @@
+/*
+ * We can use ".sort()" function to perform sorting operation. 1 mean ascending
+ * and -1 mean descending.
+ */
+
+ db.users.find().sort({"name.first_name" : 1}).pretty();
+
+ /*
+  * We can sort documents in natural order. In natural order, when we update a
+  * document, then the document will be placed in the last order. Every updated
+  * will be placed in the last order (ascending).
+  * Some examples that will affect storage (natural) order:
+  * 1. If documents are updated and don't fit in their currently allocated
+  * space, they will be moved.
+  * 2. New documents may be inserted in available gaps created by
+  * deleted or moved document.
+  */
+
+db.users.find().sort({$natural : 1}).pretty();

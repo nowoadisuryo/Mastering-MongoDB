@@ -1,0 +1,23 @@
+/*
+ * REPL (Read, Eval, Print, Loop) is a nodeJS console. Read - Reads
+ * user input, parse it into JavaScript data-structure and stores in memory.
+ * Eval - Evaluates the data structure. Print - Prints the result. Loop -
+ * Loops the command until user exit the console. To access this console
+ * you can type "node" on your command prompt. To exit the REPL console,
+ * press "CTRL+C" twice or type ".exit".
+ */
+
+/*
+ * We can call REPL server by do the following things in the console. This will
+ * return information about REPL server.
+ */
+
+const repl = require("repl");
+
+repl;
+
+/*
+ * We can use ".help" command to see what command available for us.
+ * We can use JavaScript syntaxs in REPL console.
+ * We can run ".js" file by typing 'node "/path/to/js"' command.
+ */

@@ -1,0 +1,13 @@
+/*
+ * To create user in mongoDB we can use ".createUser(Document UserInfo)"
+ * function.
+ */
+
+ db.createUser({user : "nowo", pwd : "password", roles : [{role : "userAdmin", db : "marketkoin_kyc"}]});
+
+/*
+ * To get the list of the user in the current database we can
+ * use ".getUsers()" function.
+ */
+
+db.getUsers();

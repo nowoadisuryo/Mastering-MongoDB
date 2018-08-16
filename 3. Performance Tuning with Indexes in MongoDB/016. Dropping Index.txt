@@ -1,0 +1,5 @@
+/*
+ * We can drop index with the ".dropIndex(Document param)" function.
+ */
+
+db.users.dropIndex({username : 1});

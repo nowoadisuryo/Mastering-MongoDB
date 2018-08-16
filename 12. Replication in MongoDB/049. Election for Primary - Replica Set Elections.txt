@@ -1,0 +1,12 @@
+/*
+ * Election is used when we need to choose new primary data. Why we need to
+ * choose new primary data? We need to choose new primary data because our
+ * old primary data is cannot be accessed by the secondary data.
+ *
+ * Only primary data that can use write operation, the secondary data only can
+ * use read operation.
+ *
+ * When secondary data is cannot read from primary data, this is mean something
+ * wrong happened to the primary data, then primary data need to be changed.
+ * Its time for secondary data call for election.
+ */

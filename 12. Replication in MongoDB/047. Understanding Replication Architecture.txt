@@ -1,0 +1,7 @@
+/*
+ * This is how replication work.
+ * Client do read and write to the primary data. When read and write operation
+ * is being run by client, that operation is also stored in an operation log.
+ * With the operation log, then we can do the same read and write operation to
+ * the secondary data.
+ */

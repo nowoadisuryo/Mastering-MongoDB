@@ -1,0 +1,23 @@
+/*
+ * NPM (Node Package Manager) is a tool for installing nodeJS packages,
+ * version management of packages, and dependency managemen of nodeJS packages.
+ */
+
+/*
+ * For checking npm version is installed or not, we can use "npm --version"
+ * command in our command prompt.
+ * For installing a package locally, we can use "npm install package_name"
+ * command. For installing a package globally, we can use "npm install package_name -g"
+ * command. We can install packages locally or globally. When we install packages
+ * locally, we can use the package by using "require" function in different
+ * modules.
+ * When we install packages globally, we cannot use "require" function to use the package.
+ * When to install locally and globally? You can install packages locally when
+ * the packages is used in a project. Otherwise, we can install packages
+ * globally when we want to use packages in a REPL console.
+ */
+
+/*
+ * Package that installed globally will be available in
+ * C:\Users\UserName\AppData\Roaming\npm\node_modules\package_name
+ */

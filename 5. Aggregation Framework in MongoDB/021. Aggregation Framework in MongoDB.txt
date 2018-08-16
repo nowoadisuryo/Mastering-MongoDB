@@ -1,0 +1,19 @@
+/*
+ * How aggregation work in mongoDB?
+ * - Process documents and return results.
+ * - Group values from various documents in colletction together.
+ * - Performs various operations on the grouped data.
+ */
+
+/*
+ * We can use ".aggregate([{aggregation operator}])" function to perform aggregate
+ * operation. The aggregation operator are "$sum", "$avg", "$min", "$max",
+ * "$first", "$last".
+ */
+
+/*
+ * We are grouping by "age" and sum all documents with the same values of "age"
+ * by 1.
+ */
+
+db.users.aggregate([{$group : {_id : "$age", total : {$sum : 1}}}]);

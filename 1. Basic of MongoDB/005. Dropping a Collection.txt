@@ -1,0 +1,7 @@
+/*
+ * To drop a collection we can use "db.collection_name.drop()" function.
+ */
+
+use marketkoin_kyc;
+
+db.users.drop();

@@ -1,0 +1,15 @@
+/*
+ * Sharding Architecture.
+ * Client app want to communicate with sharded data. It cannot directly
+ * accessing the sharded data. It must communicate with mongos first.
+ * The mongos then will look to the config servers, and then the config
+ * servers will connecting mongos with sharded data.
+ * Note: We can have multiple mongos.
+ */
+
+/*
+ * How the mongos will be knowing data/documents store in the sharded data? This
+ * is done through the collection level.
+ * The mongos will look for the "shard keys" for finding the right documents
+ * to fetch. The "shard keys" must be available in all collection.
+ */

@@ -1,0 +1,8 @@
+/*
+ * In replication concept heartbeat is like pings between replica set and
+ * primary dataset.
+ *
+ * Arbiters are mongod instances that are part of a replica set but do not hold
+ * data. Arbiters participate in elections in order to break ties. If a replica
+ * set has an even number of members, add an arbiter.
+ */

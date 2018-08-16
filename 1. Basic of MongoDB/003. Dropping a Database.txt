@@ -1,0 +1,8 @@
+/*
+ * We can drop database with the "db.dropDatabase()" function. First we need
+ * to switch to the database that we want to drop.
+ */
+
+use marketkoin_kyc;
+
+db.dropDatabase();

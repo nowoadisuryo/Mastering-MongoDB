@@ -1,0 +1,12 @@
+/*
+ * Sharding is a method for distributing data across multiple machines.
+ * Sharding support deployment with large data sets and very high throughput
+ * operation (read, write, update, delete).
+ */
+
+/*
+ * With sharding we can do horizontal scaling on server, horizontal scaling
+ * is, we add more servers to handle our growing data. Other than that, vertical
+ * scaling is, we add more ram/hardisk storage to our server for handling
+ * our growing data.
+ */
